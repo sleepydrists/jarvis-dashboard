@@ -44,7 +44,14 @@ Open http://localhost:5173 in Chrome or Edge.
 
 Production setup (Vercel frontend + Render/Railway API, website lead intake, CORS, persistent storage):
 
-See **[DEPLOYMENT.md](./DEPLOYMENT.md)** for step-by-step instructions.
+See **[DEPLOYMENT.md](./DEPLOYMENT.md)** for architecture and env vars.
+
+For step-by-step deploy (GitHub → Render → Vercel): **[DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md)**
+
+Quick deploy after `gh auth login`:
+```powershell
+.\scripts\deploy-all.ps1
+```
 
 ## Scripts
 
