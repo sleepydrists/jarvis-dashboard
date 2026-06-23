@@ -6,9 +6,9 @@ Complete these steps in order. Each step has a checkbox — mark when done.
 
 | Service | URL |
 |---------|-----|
-| **Render API** | `https://jarvis-api.onrender.com` |
-| **Vercel Dashboard** | `https://jarvis-dashboard.vercel.app` *(or your assigned Vercel subdomain)* |
-| **GitHub Repo** | `https://github.com/YOUR_USERNAME/jarvis-dashboard` |
+| **GitHub Repo** | https://github.com/sleepydrists/jarvis-dashboard ✅ **LIVE** |
+| **Render API** | https://jarvis-api.onrender.com |
+| **Vercel Dashboard** | https://jarvis-dashboard.vercel.app *(or your assigned Vercel subdomain)* |
 
 ---
 
@@ -38,28 +38,12 @@ Complete these steps in order. Each step has a checkbox — mark when done.
 
 ---
 
-## Phase 1 — Push code to GitHub
+## Phase 1 — Push code to GitHub ✅ DONE
 
-From the project root:
+Repo is live: **https://github.com/sleepydrists/jarvis-dashboard**
 
-```powershell
-cd C:\Users\sleep\Projects\jarvis-dashboard
-.\scripts\deploy-github.ps1
-```
-
-This will:
-1. Create public repo `jarvis-dashboard` on your GitHub account
-2. Push the full codebase to `main`
-
-**Verify:**
-- [ ] Repo exists at `https://github.com/YOUR_USERNAME/jarvis-dashboard`
-- [ ] All files visible (no `.env`, no `node_modules`)
-
-**Manual fallback** (if script fails):
-```powershell
-gh auth login
-gh repo create jarvis-dashboard --public --source=. --remote=origin --push
-```
+- [x] Repo exists at https://github.com/sleepydrists/jarvis-dashboard
+- [x] All files pushed to `main`
 
 ---
 
@@ -67,7 +51,7 @@ gh repo create jarvis-dashboard --public --source=. --remote=origin --push
 
 - [ ] Open **Render Blueprints**: https://dashboard.render.com/blueprints
 - [ ] Click **New Blueprint Instance**
-- [ ] Connect GitHub → select `jarvis-dashboard` repo
+- [ ] Connect GitHub → select **`sleepydrists/jarvis-dashboard`** repo
 - [ ] Render reads `render.yaml` and creates service **`jarvis-api`**
 - [ ] When prompted, set these **secret** environment variables:
 
@@ -123,8 +107,8 @@ $env:RENDER_API_URL = "https://jarvis-api.onrender.com"
 ```
 
 **Manual fallback** (Vercel dashboard):
-1. https://vercel.com/new → Import `jarvis-dashboard` from GitHub
-2. Framework: **Vite** (auto-detected)
+1. Open: https://vercel.com/new/clone?repository-url=https://github.com/sleepydrists/jarvis-dashboard
+2. Framework: **Vite** (auto-detected from `vercel.json`)
 3. Environment variable:
    - `VITE_API_URL` = `https://jarvis-api.onrender.com`
 4. Deploy
@@ -203,9 +187,9 @@ await fetch(`${JARVIS_API}/api/leads`, {
 Fill in after deploy:
 
 ```
-GitHub:  https://github.com/________________/jarvis-dashboard
+GitHub:  https://github.com/sleepydrists/jarvis-dashboard  ✅
 Render:  https://jarvis-api.onrender.com
-Vercel:  https://________________.vercel.app
+Vercel:  https://jarvis-dashboard.vercel.app
 Website: https://hgjunkremoval.com  →  POST /api/leads
 ```
 
